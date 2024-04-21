@@ -1,8 +1,39 @@
+body {
+  font-family: 'Cinzel', 'Quintessential';
+  background-color: #efecdc;
+  color: #333;
+}
 #image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 1rem;
   padding: 1rem;
+}
+
+@media (min-width: 1190px) { /* Adjust based on 7 items * 170px */
+  #image-grid {
+    grid-template-columns: repeat(7, 1fr);
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 1189px) and (min-width: 1020px) { /* Adjust for fewer columns */
+  #image-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 1019px) and (min-width: 850px) { /* Adjust for fewer columns */
+  #image-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 849px) and (min-width: 680px) { /* Adjust for fewer columns */
+  #image-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .card {
@@ -44,7 +75,7 @@
 }
 
 .card-body {
-  padding: 0.5rem;
+  padding: 0.35em;
 }
 
 .card-title {
@@ -56,11 +87,7 @@
   font-size: 0.875rem;
   color: #666;
 }
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f7f8fa;
-  color: #333;
-}
+
 
 #image-grid img {
   border-radius: 8px;
@@ -104,8 +131,7 @@ body {
 }
 
 .modal-dialog {
-  margin: 10% auto;
-  padding: 20px;
+  margin: 5% auto;
   width: 50%;
   border-radius: 8px;
 }
@@ -153,7 +179,7 @@ button {
 .modal-footer {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  padding-bottom: 1em;
 }
 
 #image-grid img {
