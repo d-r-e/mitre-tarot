@@ -1,5 +1,6 @@
 import {Modal} from 'bootstrap';
-
+// get  base url from config
+const base = import.meta.env.BASE_URL;
 async function loadImages() {
   const grid = document.getElementById('image-grid') as HTMLElement;
 
@@ -98,7 +99,7 @@ async function loadImages() {
 
     // Image element
     const imgElement = document.createElement('img');
-    imgElement.src = `/img/${filename}`;
+    imgElement.src = `img/${filename}`;
     imgElement.alt = `${title} (${id})`;
     imgElement.title = `${title} (${id})`;
     imgElement.classList.add('img-fluid', 'card-img-top'); // Bootstrap responsive images
@@ -128,7 +129,7 @@ async function loadImages() {
 
 function showDescription(title: string, id: string, description: string, imgSrc: string) {
   const sound_name = title.toLowerCase().split(' ').join('');
-  const sound = new Audio('/voices/' + sound_name + '.wav');
+  const sound = new Audio('voices/' + sound_name + '.wav');
   sound.play();
 
   const modalBody = document.getElementById('modal-body');
